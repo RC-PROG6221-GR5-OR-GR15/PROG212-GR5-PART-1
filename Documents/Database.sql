@@ -71,3 +71,28 @@ CREATE TABLE EVENT (
         REFERENCES `USER`(user_id)
         ON DELETE RESTRICT
 );
+-- Category Table
+CREATE TABLE CATEGORY (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT NOT NULL,
+    category_name VARCHAR(100) NOT NULL,
+    min_age INT,
+    max_age INT,
+    gender_restriction VARCHAR(50),
+    max_participants INT,
+    entry_fee DECIMAL(10,2) DEFAULT 0.00,
+    created_by INT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_category_event
+        FOREIGN KEY (event_id)
+        REFERENCES EVENT(event_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_category_created_by
+        FOREIGN KEY (created_by)
+        REFERENCES `USER`(user_id)
+        ON DELETE SET NULL,
+
+    CHECK (min_age IS NULL OR max_age IS NULL OR min_age <= max_age)
+);
