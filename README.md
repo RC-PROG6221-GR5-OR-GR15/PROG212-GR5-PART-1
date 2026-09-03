@@ -48,6 +48,20 @@ The system supports three main activities:
 * Calculate participant rankings
 * Track category rankings
 * Record prize money
+##  Database Relationships
+
+The main relationships in the system are:
+
+```text
+USER <<-->>USERROLE <<->>> ROLE
+ 
+ EVENT <<->>CATEGORY
+                    
+ENROLMENT <<->> PARTICIPANT_EVENT
+          RESULT
+```
+
+### Example Flow
 
 
 
