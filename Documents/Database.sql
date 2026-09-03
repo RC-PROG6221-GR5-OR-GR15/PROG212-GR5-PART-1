@@ -161,3 +161,21 @@ CREATE TABLE PARTICIPANT_EVENT (
     UNIQUE (event_id, user_id),
     UNIQUE (event_id, bib_number)
 );
+-- Results Table 
+CREATE TABLE RESULT (
+    result_id INT AUTO_INCREMENT PRIMARY KEY,
+    participant_event_id INT NOT NULL,
+    finishing_position INT,
+    finish_time_seconds DECIMAL(12,2),
+    pace_per_km DECIMAL(10,2),
+    overall_rank INT,
+    category_rank INT,
+    prize_money DECIMAL(10,2) DEFAULT 0.00,
+
+    CONSTRAINT fk_result_participant
+        FOREIGN KEY (participant_event_id)
+        REFERENCES PARTICIPANT_EVENT(participant_event_id)
+        ON DELETE CASCADE,
+
+    UNIQUE (participant_event_id)
+);
