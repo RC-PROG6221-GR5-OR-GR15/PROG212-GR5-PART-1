@@ -48,3 +48,26 @@ CREATE TABLE USERROLE (
 
     UNIQUE (user_id, role_id)
 );
+
+--Event Table
+CREATE TABLE EVENT (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_name VARCHAR(150) NOT NULL,
+    event_date DATE NOT NULL,
+    event_time TIME NOT NULL,
+    venue VARCHAR(150),
+    location VARCHAR(150),
+    distance_km DECIMAL(10,2),
+    event_type VARCHAR(100),
+    entry_fee DECIMAL(10,2) DEFAULT 0.00,
+    status VARCHAR(50) DEFAULT 'Upcoming',
+    created_by INT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_event_created_by
+        FOREIGN KEY (created_by)
+        REFERENCES `USER`(user_id)
+        ON DELETE RESTRICT
+);
