@@ -218,3 +218,49 @@ Example:
 ### 6. Run the application
 
 
+---
+
+##  User Roles
+
+The system may include the following roles:
+
+| Role            | Responsibilities                                             |
+| --------------- | ------------------------------------------------------------ |
+| Administrator   | Manages users, events, categories, participants, and results |
+| Event Organizer | Creates and manages events                                   |
+| Participant     | Enrols in events and views results                           |
+
+---
+
+##  Example Event
+
+```text
+Event Name: Johannesburg City Marathon
+Date: 15 October 2026
+Distance: 42.2 km
+Location: Johannesburg
+Entry Fee: R250.00
+Status: Upcoming
+```
+
+---
+
+##  Future Improvements
+
+Possible future features include:
+
+* Online payment integration
+* Email notifications
+* SMS notifications
+* QR code participant check-in
+* Live participant tracking
+* Digital certificates
+* Event leaderboards
+* Mobile application support
+
+---
+
+##  Conclusion
+
+The **Marathon Event Management System** provides a simple way to manage marathon events from registration to final results. The system helps reduce manual work and keeps event, participant, payment, and result information organised in one central database.
+
