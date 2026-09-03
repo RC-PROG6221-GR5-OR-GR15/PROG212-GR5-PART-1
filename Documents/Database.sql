@@ -131,3 +131,33 @@ CREATE TABLE ENROLMENT (
 
     UNIQUE (user_id, event_id)
 );
+--Participant event Table
+CREATE TABLE PARTICIPANT_EVENT (
+    participant_event_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT NOT NULL,
+    user_id INT NOT NULL,
+    category_id INT NOT NULL,
+    bib_number INT,
+    finishing_position INT,
+    finish_time_seconds DECIMAL(12,2),
+    entry_status VARCHAR(50) DEFAULT 'Confirmed',
+    entered_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_participant_event_event
+        FOREIGN KEY (event_id)
+        REFERENCES EVENT(event_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_participant_event_user
+        FOREIGN KEY (user_id)
+        REFERENCES `USER`(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_participant_event_category
+        FOREIGN KEY (category_id)
+        REFERENCES CATEGORY(category_id)
+        ON DELETE RESTRICT,
+
+    UNIQUE (event_id, user_id),
+    UNIQUE (event_id, bib_number)
+);
