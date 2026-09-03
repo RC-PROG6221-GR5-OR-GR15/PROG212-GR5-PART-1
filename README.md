@@ -12,3 +12,21 @@ The system supports three main activities:
 * Managing users and their roles
 * Creating and managing marathon events
 * Registering participants and recording race results
+  **# Features**
+
+###  User Management
+
+* Register and manage users
+* User login and authentication
+* Assign roles to users
+* Activate or deactivate users
+
+###  Event Management
+
+* Create marathon events
+* Set event date, time, venue, and location
+* Define marathon distance
+* Set entry fees
+* Manage event status
+
+
