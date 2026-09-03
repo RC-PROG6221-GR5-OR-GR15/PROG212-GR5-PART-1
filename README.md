@@ -85,6 +85,74 @@ User views their results
 ```
 
 ---
+Here ERD Image
+
+## API Endpoints
+
+The system provides REST API endpoints for managing the different parts of the application.
+
+### Authentication
+
+```text
+POST   /api/auth/register
+POST   /api/auth/login
+POST   /api/auth/logout
+GET    /api/auth/profile
+PUT    /api/auth/profile
+```
+
+### Users
+
+```text
+GET    /api/users
+GET    /api/users/{id}
+POST   /api/users
+PUT    /api/users/{id}
+DELETE /api/users/{id}
+```
+
+### Events
+
+```text
+GET    /api/events
+GET    /api/events/{id}
+POST   /api/events
+PUT    /api/events/{id}
+DELETE /api/events/{id}
+```
+
+### Categories
+
+```text
+GET    /api/categories
+GET    /api/categories/{id}
+POST   /api/categories
+PUT    /api/categories/{id}
+DELETE /api/categories/{id}
+```
+
+### Enrolments
+
+```text
+GET    /api/enrolments
+GET    /api/enrolments/{id}
+POST   /api/enrolments
+PUT    /api/enrolments/{id}
+DELETE /api/enrolments/{id}
+```
+
+### Results
+
+```text
+GET    /api/results
+GET    /api/results/{id}
+POST   /api/results
+PUT    /api/results/{id}
+DELETE /api/results/{id}
+```
+
+---
+
 
 
 
