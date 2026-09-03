@@ -28,5 +28,26 @@ The system supports three main activities:
 * Define marathon distance
 * Set entry fees
 * Manage event status
+  ###  Enrolment Management
+
+* Allow users to enrol in events
+* Select an event category
+* Track enrolment status
+* Track payment status and amounts
+
+### Participant Management
+
+* Add participants to events
+* Assign bib numbers
+* Track participant entry status
+
+### Results Management
+
+* Record finishing positions
+* Record finish times
+* Calculate participant rankings
+* Track category rankings
+* Record prize money
+
 
 
