@@ -96,3 +96,38 @@ CREATE TABLE CATEGORY (
 
     CHECK (min_age IS NULL OR max_age IS NULL OR min_age <= max_age)
 );
+--Enrolment Table
+CREATE TABLE ENROLMENT (
+    enrolment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    event_id INT NOT NULL,
+    category_id INT NOT NULL,
+    enrolment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    enrolment_status VARCHAR(50) DEFAULT 'Pending',
+    payment_status VARCHAR(50) DEFAULT 'Unpaid',
+    amount_paid DECIMAL(10,2) DEFAULT 0.00,
+    payment_date DATETIME NULL,
+    created_by INT,
+
+    CONSTRAINT fk_enrolment_user
+        FOREIGN KEY (user_id)
+        REFERENCES `USER`(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_enrolment_event
+        FOREIGN KEY (event_id)
+        REFERENCES EVENT(event_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_enrolment_category
+        FOREIGN KEY (category_id)
+        REFERENCES CATEGORY(category_id)
+        ON DELETE RESTRICT,
+
+    CONSTRAINT fk_enrolment_created_by
+        FOREIGN KEY (created_by)
+        REFERENCES `USER`(user_id)
+        ON DELETE SET NULL,
+
+    UNIQUE (user_id, event_id)
+);
