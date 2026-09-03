@@ -153,6 +153,16 @@ DELETE /api/results/{id}
 
 ---
 
+## Tools
+
+The system will be developed using:
+**In future For now its SSMS for database**
+* **Backend:** ASP.NET Core Web API
+* **Programming Language:** C#
+* **Database:** MySQL
+* **Database Tool:** MySQL Workbench
+* **API Testing:** Postman
+* **Frontend:** Web, Mobile, or Desktop Application
 
 
 
