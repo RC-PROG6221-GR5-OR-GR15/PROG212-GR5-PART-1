@@ -62,6 +62,29 @@ ENROLMENT <<->> PARTICIPANT_EVENT
 ```
 
 ### Example Flow
+```text
+User registers
+      ↓
+User logs in
+      ↓
+User views available events
+      ↓
+User selects an event and category
+      ↓
+User enrols and makes payment
+      ↓
+User becomes a confirmed participant
+      ↓
+Participant receives a bib number
+      ↓
+Event takes place
+      ↓
+Administrator records results
+      ↓
+User views their results
+```
+
+---
 
 
 
