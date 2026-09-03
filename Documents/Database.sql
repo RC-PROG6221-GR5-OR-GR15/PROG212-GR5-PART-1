@@ -22,3 +22,29 @@ CREATE TABLE `ROLE` (
     description VARCHAR(255),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+--User Role
+
+CREATE TABLE USERROLE (
+    userrole_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    role_id INT NOT NULL,
+    assigned_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    assigned_by INT,
+
+    CONSTRAINT fk_userrole_user
+        FOREIGN KEY (user_id)
+        REFERENCES `USER`(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_userrole_role
+        FOREIGN KEY (role_id)
+        REFERENCES `ROLE`(role_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_userrole_assigned_by
+        FOREIGN KEY (assigned_by)
+        REFERENCES `USER`(user_id)
+        ON DELETE SET NULL,
+
+    UNIQUE (user_id, role_id)
+);
