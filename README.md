@@ -169,7 +169,7 @@ The system will be developed using:
 ### 1. Clone the project
 
 ```bash
-git clone <your-project-repository-url>
+git clone 
 ```
 
 ### 2. Create the database
