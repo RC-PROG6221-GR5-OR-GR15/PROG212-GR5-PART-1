@@ -15,3 +15,10 @@ CREATE TABLE `USER` (
     last_login DATETIME NULL,
     is_active BOOLEAN DEFAULT TRUE
 );
+--Role Table
+CREATE TABLE `ROLE` (
+    role_id INT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(100) NOT NULL UNIQUE,
+    description VARCHAR(255),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
