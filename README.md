@@ -163,6 +163,58 @@ The system will be developed using:
 * **Database Tool:** MySQL Workbench
 * **API Testing:** Postman
 * **Frontend:** Web, Mobile, or Desktop Application
+---
+##  Getting Started
 
+### 1. Clone the project
+
+```bash
+git clone <your-project-repository-url>
+```
+
+### 2. Create the database
+
+Create a MySQL database called:
+
+```sql
+CREATE DATABASE EventManagementDB;
+```
+
+### 3. Select the database
+
+```sql
+USE EventManagementDB;
+```
+
+### 4. Run the SQL scripts
+
+Run the SQL commands provided in the project to create the following tables:
+
+* USER
+* ROLE
+* USERROLE
+* EVENT
+* CATEGORY
+* ENROLMENT
+* PARTICIPANT_EVENT
+* RESULT
+
+### 5. Configure the database connection
+
+Add your MySQL connection string to your application's configuration file.
+
+Example:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=EventManagementDB;User=root;Password=your_password;"
+  }
+}
+```
+
+> Replace `your_password` with your actual MySQL password.
+
+### 6. Run the application
 
 
